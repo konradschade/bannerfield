@@ -1,0 +1,16 @@
+:root { --bg: #f3ead7; --ink: #2f2418; --muted: #6b5a44; --line: #d8c7a6; --accent: #8a3b1f; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1f1a14; --ink: #efe4cf; --muted: #b8a68a; --line: #4a3d2e; --accent: #e09a6b; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 17px/1.6 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+h1, h2 { line-height: 1.25; letter-spacing: 0.02em; }
+h1 { font-size: 1.8rem; margin-top: 0.5em; }
+h2 { font-size: 1.2rem; margin-top: 2em; }
+a { color: var(--accent); }
+.logo { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 8px; }
+.lead { font-size: 1.1rem; color: var(--muted); text-align: center; }
+.icon { display: block; width: 96px; height: 96px; border-radius: 22px; margin: 24px auto; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
