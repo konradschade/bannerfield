@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt – Bannerfield</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../icon.png">
+<style>
+form { display: grid; gap: 14px; margin-top: 16px; }
+label { display: grid; gap: 4px; font-size: 0.95rem; }
+input, textarea { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); }
+textarea { min-height: 160px; resize: vertical; }
+button { justify-self: start; font: inherit; padding: 10px 22px; border: 0; border-radius: 8px; background: var(--accent); color: var(--bg); cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: default; }
+.hint { color: var(--muted); font-size: 0.9rem; }
+#status { min-height: 1.6em; }
+.trap { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="../">← Bannerfield</a> · <a href="../impressum/">Impressum</a> · <a href="../datenschutz/">Datenschutz</a></p>
+  <h1>Kontakt</h1>
+  <p>Schreib mir direkt. Ich antworte in der Regel innerhalb von ein bis zwei Tagen an die E-Mail-Adresse,
+  die du angibst. Alternativ per E-Mail an <a href="mailto:konradschade1@gmail.com">konradschade1@gmail.com</a>.</p>
+  <form id="f">
+    <label>Name (freiwillig)<input id="name" name="name" autocomplete="name" maxlength="80"></label>
+    <label>Deine E-Mail-Adresse für die Antwort<input id="mail" name="mail" type="email" required autocomplete="email" maxlength="120"></label>
+    <label>Nachricht<textarea id="msg" name="msg" required maxlength="3000"></textarea></label>
+    <input class="trap" id="web" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="hint">Deine Angaben werden verschlüsselt an mich übermittelt und nur für die Antwort verwendet
+    (siehe <a href="../datenschutz/">Datenschutz</a>).</p>
+    <button id="send" type="submit">Senden</button>
+    <p id="status" role="status"></p>
+  </form>
+</main>
+<script>
+const f = document.getElementById("f"), st = document.getElementById("status"), btn = document.getElementById("send");
+f.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (document.getElementById("web").value) return;  // Spam-Falle
+  const name = document.getElementById("name").value.trim();
+  const mail = document.getElementById("mail").value.trim();
+  const msg = document.getElementById("msg").value.trim();
+  if (!mail || !msg) { st.textContent = "Bitte E-Mail-Adresse und Nachricht ausfüllen."; return; }
+  btn.disabled = true; st.textContent = "Wird gesendet …";
+  try {
+    const r = await fetch("https://ntfy.sh/bannerfield-fb-828cbc5eca8b1c7e", {
+      method: "POST",
+      headers: { "Title": "Website-Kontakt", "Tags": "envelope" },
+      body: "Von: " + (name || "(ohne Name)") + " <" + mail + ">\n\n" + msg
+    });
+    if (!r.ok) throw new Error(r.status);
+    f.reset(); st.textContent = "Danke, deine Nachricht ist angekommen.";
+  } catch (err) {
+    st.textContent = "Senden hat nicht geklappt. Bitte schreib mir per E-Mail an konradschade1@gmail.com.";
+  } finally { btn.disabled = false; }
+});
+</script>
+</body>
+</html>
