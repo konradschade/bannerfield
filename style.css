@@ -12,5 +12,7 @@ h2 { font-size: 1.2rem; margin-top: 2em; }
 a { color: var(--accent); }
 .logo { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 8px; }
 .lead { font-size: 1.1rem; color: var(--muted); text-align: center; }
+.store { text-align: center; margin: 16px 0 0; }
+.store img { display: inline-block; height: 53px; width: auto; }
 .icon { display: block; width: 96px; height: 96px; border-radius: 22px; margin: 24px auto; }
 footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
