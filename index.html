@@ -1,27 +1,76 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bannerfield</title>
+<title>Bannerfield – relaxed castle strategy for iPhone and iPad</title>
+<meta name="description" content="Bannerfield is a relaxing turn-based strategy game for iPhone and iPad: conquer and upgrade castles, play as humans or undead, push back the rot. Completely offline, no ads, no in-app purchases.">
+<meta name="theme-color" content="#15111c">
+<meta name="apple-itunes-app" content="app-id=6818740691">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bannerfield">
+<meta property="og:description" content="Relaxed castle strategy for iPhone and iPad.">
+<meta property="og:url" content="https://konradschade.github.io/bannerfield/">
+<meta property="og:image" content="https://konradschade.github.io/bannerfield/media/castle_en.jpg">
+<link rel="alternate" hreflang="en" href="https://konradschade.github.io/bannerfield/">
+<link rel="alternate" hreflang="de" href="https://konradschade.github.io/bannerfield/de/">
+<link rel="alternate" hreflang="x-default" href="https://konradschade.github.io/bannerfield/">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
 <main>
-  <img class="logo" src="logo.png" alt="Bannerfield">
-  <p class="lead">Entspannte Burgen-Strategie für iPhone und iPad.</p>
-  <p class="store"><a href="https://apps.apple.com/de/app/bannerfield/id6818740691"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/de-de?size=250x83" alt="Laden im App Store" width="160" height="53"></a></p>
-  <img class="icon" src="icon.png" alt="">
-  <p>Das Land verfault. Wo die Untoten herrschen, sterben die Wälder, Nebel zieht über die Gräber und Krähen
-  kreisen über den Knochenmühlen. Nur dein Held und seine Burgen stehen noch dazwischen.</p>
-  <p>Bannerfield ist ein rundenbasiertes Strategiespiel zum Entspannen: Burgen erobern und ausbauen, als Menschen
-  oder Untote spielen, die Fäulnis zurückdrängen. Komplett offline, ohne Werbung und ohne In-App-Käufe.</p>
-  <p>Hinter Bannerfield steht kein Studio, sondern ein einzelner Indie-Entwickler aus Berlin, der die
-  rundenbasierten Strategiespiele der 90er geliebt hat.</p>
+  <header class="topbar">
+    <nav class="lang" aria-label="Language">
+      <a href="./" lang="en" aria-current="page">EN</a>|<a href="de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><img class="logo" src="logo.png" alt="Bannerfield" width="900" height="376"></h1>
+    <p class="pitch">Relaxed castle strategy for iPhone and iPad.</p>
+    <a class="appstore" href="https://apps.apple.com/app/bannerfield/id6818740691">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+      <span><small>Download on the</small><b>App Store</b></span>
+    </a>
+    <p class="facts"><span>Completely offline</span> · <span>No ads</span> · <span>No in-app purchases</span></p>
+  </section>
+
+  <section class="media" aria-label="Gameplay">
+    <figure class="video">
+      <video controls playsinline muted loop preload="none" width="720" height="1560" poster="media/gameplay_poster.jpg">
+        <source src="media/gameplay.mp4" type="video/mp4">
+      </video>
+      <figcaption>One turn: attack a castle, win the battle, collect the loot.</figcaption>
+    </figure>
+    <div class="shots">
+      <a href="media/castle_en.jpg"><img src="media/castle_en.jpg" width="900" height="585" loading="lazy" alt="The neutral castle Kaltwasser by a lake"></a>
+      <a href="media/battle_en.jpg"><img src="media/battle_en.jpg" width="900" height="585" loading="lazy" alt="A battle against the wolves guarding a special site"></a>
+      <a href="media/rot_en.jpg"><img src="media/rot_en.jpg" width="900" height="585" loading="lazy" alt="Undead castles in the rotting land"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>The land is rotting</h2>
+    <p>Where the undead rule, the forests die, mist drifts over the graves and crows circle above the bone
+    mills. Only your hero and his castles still stand in the way.</p>
+    <p>Bannerfield is a turn-based strategy game made for unwinding:</p>
+    <ul class="features">
+      <li><b>Turn-based and relaxed</b>Conquer castles and build them up.</li>
+      <li><b>Humans or undead</b>Play either side and push back the rot.</li>
+      <li><b>Completely offline</b>No internet connection and no account needed.</li>
+      <li><b>No ads, no <span class="nw">in-app</span> purchases</b>One purchase gets you the whole game.</li>
+    </ul>
+    <p>Bannerfield isn't made by a studio but by a single indie developer from Berlin who loved the
+    turn-based strategy games of the 90s.</p>
+  </section>
+
   <footer>
-    Konrad Schade · <a href="mailto:konradschade1@gmail.com">konradschade1@gmail.com</a> ·
-    <a href="support/">Hilfe</a> · <a href="kontakt/">Kontakt</a> · <a href="impressum/">Impressum</a> · <a href="datenschutz/">Datenschutz</a>
+    <nav aria-label="Footer">
+      <a href="support/">Support</a><a href="contact/">Contact</a><a href="datenschutz/">Privacy</a><a href="impressum/">Imprint</a>
+    </nav>
+    Konrad Schade · <a href="mailto:konradschade1@gmail.com">konradschade1@gmail.com</a>
   </footer>
 </main>
 </body>

@@ -6,6 +6,9 @@
 <title>Kontakt – Bannerfield</title>
 <link rel="stylesheet" href="../style.css">
 <link rel="icon" href="../icon.png">
+<meta name="theme-color" content="#15111c">
+<link rel="alternate" hreflang="en" href="https://konradschade.github.io/bannerfield/contact/">
+<link rel="alternate" hreflang="de" href="https://konradschade.github.io/bannerfield/kontakt/">
 <style>
 form { display: grid; gap: 14px; margin-top: 16px; }
 label { display: grid; gap: 4px; font-size: 0.95rem; }
@@ -20,7 +23,12 @@ button:disabled { opacity: 0.6; cursor: default; }
 </head>
 <body>
 <main>
-  <p><a href="../">← Bannerfield</a> · <a href="../impressum/">Impressum</a> · <a href="../datenschutz/">Datenschutz</a></p>
+  <header class="topbar">
+    <a class="back" href="../de/">← Bannerfield</a>
+    <nav class="lang" aria-label="Sprache">
+      <a href="../contact/" lang="en" hreflang="en">EN</a>|<a href="./" lang="de" aria-current="page">DE</a>
+    </nav>
+  </header>
   <h1>Kontakt</h1>
   <p>Schreib mir direkt. Ich antworte in der Regel innerhalb von ein bis zwei Tagen an die E-Mail-Adresse,
   die du angibst. Alternativ per E-Mail an <a href="mailto:konradschade1@gmail.com">konradschade1@gmail.com</a>.</p>
@@ -34,6 +42,11 @@ button:disabled { opacity: 0.6; cursor: default; }
     <button id="send" type="submit">Senden</button>
     <p id="status" role="status"></p>
   </form>
+  <footer>
+    <nav aria-label="Fußzeile">
+      <a href="../de/">Startseite</a><a href="../de/support/">Hilfe</a><a href="../datenschutz/">Datenschutz</a><a href="../impressum/">Impressum</a>
+    </nav>
+  </footer>
 </main>
 <script>
 const f = document.getElementById("f"), st = document.getElementById("status"), btn = document.getElementById("send");
