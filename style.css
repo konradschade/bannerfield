@@ -10,8 +10,25 @@
 html { -webkit-text-size-adjust: 100%; background: var(--bg); }
 body {
   margin: 0; color: var(--ink); font: 17px/1.6 var(--serif); overflow-wrap: break-word;
-  background: var(--bg) radial-gradient(ellipse 120% 480px at 50% 0, #2c2142 0%, rgba(21, 17, 28, 0) 100%) no-repeat;
+  background: transparent; position: relative; min-height: 100vh;
 }
+/* Low-Poly-Hintergrund: das Titelbild des Spiels, hinter der ganzen Seite stark abgedunkelt (fest, scrollt nicht mit) */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background: linear-gradient(rgba(21, 17, 28, 0.84), rgba(21, 17, 28, 0.9)), url("media/bg_title.jpg") center 30% / cover no-repeat;
+}
+/* Startseite: oben das Titelbild in voller Farbe (Abendhimmel, Berge, Heldin), läuft nach unten ins Dunkle aus */
+.sky {
+  position: absolute; top: 0; left: 0; right: 0; z-index: -1; pointer-events: none;
+  height: clamp(600px, 158vw, 1000px);
+  background:
+    linear-gradient(to bottom, rgba(21, 17, 28, 0.25) 0%, rgba(21, 17, 28, 0) 18%, rgba(21, 17, 28, 0.12) 45%,
+      rgba(21, 17, 28, 0.72) 74%, rgba(21, 17, 28, 0.9) 100%),
+    url("media/bg_title.jpg") center 12% / cover no-repeat;
+}
+.home .pitch, .home .facts { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75), 0 2px 14px rgba(0, 0, 0, 0.55); }
+.home .facts { color: var(--ink); }
+.home .lang a[aria-current] { background: rgba(21, 17, 28, 0.6); }
 main { max-width: 720px; margin: 0 auto; padding: 12px 16px 40px; }
 img, video { max-width: 100%; }
 a { color: var(--link); }
@@ -31,7 +48,7 @@ h3 { font-size: 1.05rem; margin: 1.6em 0 0.3em; }
 /* Kopf der Startseite */
 .hero { text-align: center; }
 .hero h1 { margin: 0; }
-.logo { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+.logo { display: block; width: 100%; max-width: 560px; height: auto; margin: 4px auto 0; filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45)); }
 .pitch { font-size: 1.3rem; line-height: 1.4; margin: 6px auto 22px; max-width: 26ch; }
 
 /* Eigener App-Store-Knopf (kein nachgeladenes Badge) */
@@ -71,7 +88,7 @@ h3 { font-size: 1.05rem; margin: 1.6em 0 0.3em; }
 .features { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 10px; }
 .features li {
   position: relative; padding: 12px 14px 12px 42px;
-  background: var(--bg2); border: 1px solid var(--line); border-radius: 12px;
+  background: rgba(32, 26, 43, 0.82); border: 1px solid var(--line); border-radius: 12px;
   font-size: 16px; line-height: 1.45; color: var(--muted);
 }
 .features li::before {
